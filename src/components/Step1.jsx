@@ -1,73 +1,43 @@
 import React from "react";
 
-const Step1 = ({ formData, handleChange, nextStep }) => {
+const Step1 = ({ register, errors, nextStep }) => {
   return (
-    <div className="space-y-6">
+    <div className="space-y-4">
+      <h2 className="text-xl font-bold">Personal Info</h2>
+      
       <div>
-        <h2 className="text-2xl font-bold text-gray-800">Personal Info</h2>
-        <p className="text-gray-500 text-sm">
-          Please enter your basic details to get started.
-        </p>
+        <label className="block text-sm font-medium">First Name</label>
+        <input 
+          {...register("firstName")} // This replaces value and onChange
+          className={`w-full border p-2 rounded ${errors.firstName ? 'border-red-500' : 'border-gray-300'}`}
+        />
+        {errors.firstName && <p className="text-red-500 text-xs mt-1">{errors.firstName.message}</p>}
       </div>
 
-      <div className="space-y-4">
-        <div className="flex flex-col gap-1.5">
-          <label
-            htmlFor="firstName"
-            className="text-sm font-medium text-gray-700"
-          >
-            First Name
-          </label>
-          <input
-            type="text"
-            id="firstName"
-            name="firstName"
-            value={formData.firstName}
-            onChange={handleChange}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-all"
-          />
-        </div>
-
-        <div className="flex flex-col gap-1.5">
-          <label
-            htmlFor="lastName"
-            className="text-sm font-medium text-gray-700"
-          >
-            Last Name
-          </label>
-          <input
-            type="text"
-            id="lastName"
-            name="lastName"
-            value={formData.lastName}
-            onChange={handleChange}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-all"
-          />
-        </div>
-
-        <div className="flex flex-col gap-1.5">
-          <label htmlFor="dob" className="text-sm font-medium text-gray-700">
-            Date of Birth
-          </label>
-          <input
-            type="date"
-            id="dob"
-            name="dob"
-            value={formData.dob}
-            onChange={handleChange}
-            className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 outline-none transition-all"
-          />
-        </div>
+      <div>
+        <label className="block text-sm font-medium">Last Name</label>
+        <input 
+          {...register("lastName")}
+          className={`w-full border p-2 rounded ${errors.lastName ? 'border-red-500' : 'border-gray-300'}`}
+        />
+        {errors.lastName && <p className="text-red-500 text-xs mt-1">{errors.lastName.message}</p>}
       </div>
-
-      <div className="pt-4">
-        <button
-          onClick={nextStep}
-          className="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-semibold py-2.5 rounded-lg shadow-md transition-colors duration-200 active:transform active:scale-[0.98]"
-        >
-          Next
-        </button>
+<div>
+        <label className="block text-sm font-medium">Date of Birth</label>
+        <input 
+          {...register("dob")}
+          type="date"
+          className={`w-full border p-2 rounded ${errors.dob ? 'border-red-500' : 'border-gray-300'}`}
+        />
+        {errors.dob && <p className="text-red-500 text-xs mt-1">{errors.dob.message}</p>}
       </div>
+      <button                                                                                                     
+        type="button" 
+        onClick={nextStep}
+        className="w-full bg-indigo-600 text-white py-2 rounded shadow hover:bg-indigo-700"
+      >
+        Next
+      </button>
     </div>
   );
 };
