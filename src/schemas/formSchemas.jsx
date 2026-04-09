@@ -1,12 +1,20 @@
 import * as z from "zod";
 
- const registrationSchema = z
+const registrationSchema = z
   .object({
     firstName: z.string().min(1, "First name is too short"),
     lastName: z.string().min(1, "Last name is too short"),
     dob: z
       .string()
       .min(1, "Date of birth is required")
+      .refine(
+        (dateString) => {
+          const selectDate = new Date(dateString);
+          const today = new Date();
+          return selectDate <= today;
+        },
+        { message: "Date of birth cannot be in the future" },
+      )
       .refine(
         (dateString) => {
           const birthDate = new Date(dateString);
@@ -34,4 +42,4 @@ import * as z from "zod";
     path: ["confirmPassword"],
   });
 
-  export default registrationSchema;
+export default registrationSchema;

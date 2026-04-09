@@ -1,6 +1,7 @@
 import React from "react";
 
 const Step1 = ({ register, errors, nextStep }) => {
+  const today = new Date().toISOString().split("T")[0];
   return (
     <div className="space-y-4">
       <h2 className="text-xl font-bold">Personal Info</h2>
@@ -8,7 +9,7 @@ const Step1 = ({ register, errors, nextStep }) => {
       <div>
         <label className="block text-sm font-medium">First Name</label>
         <input 
-          {...register("firstName")} // This replaces value and onChange
+          {...register("firstName")} 
           className={`w-full border p-2 rounded ${errors.firstName ? 'border-red-500' : 'border-gray-300'}`}
         />
         {errors.firstName && <p className="text-red-500 text-xs mt-1">{errors.firstName.message}</p>}
@@ -27,6 +28,7 @@ const Step1 = ({ register, errors, nextStep }) => {
         <input 
           {...register("dob")}
           type="date"
+          max={today}
           className={`w-full border p-2 rounded ${errors.dob ? 'border-red-500' : 'border-gray-300'}`}
         />
         {errors.dob && <p className="text-red-500 text-xs mt-1">{errors.dob.message}</p>}
