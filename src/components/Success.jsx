@@ -1,5 +1,6 @@
 import React from "react";
 import { CheckCircle, ArrowRight, PartyPopper } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Success = ({ onReset }) => {
   return (
