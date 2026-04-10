@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Step3 = ({ formData, prevStep }) => {
   return (
@@ -16,9 +17,11 @@ const Step3 = ({ formData, prevStep }) => {
         <button type="button" onClick={prevStep} className="w-1/2 py-2 border border-gray-300 rounded-lg hover:bg-gray-50">
           Edit
         </button>
-        <button type="submit" className="w-1/2 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 shadow-md font-bold transition-all">
-          Submit Form
-        </button>
+        <Link to="/success">
+          <button className="w-1/2 py-2 bg-emerald-600 text-white rounded-lg hover:bg-emerald-700 shadow-md font-bold transition-all">
+            Submit Form
+          </button>
+        </Link>
       </div>
     </div>
   );
