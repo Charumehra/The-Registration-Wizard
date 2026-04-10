@@ -2,7 +2,7 @@
 
 A sleek, multi-step registration form built with **React**, **Tailwind CSS**, and **React Hook Form**. This project demonstrates industry-standard form handling, real-time validation, and a dynamic user experience.
 
-![Registration Wizard Preview]()
+![Registration Wizard Preview](https://the-registration-wizard-jet.vercel.app/)
 
 ##  Features
 

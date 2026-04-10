@@ -1,5 +1,5 @@
 import React from "react";
-import { CheckCircle, ArrowRight, PartyPopper } from "lucide-react";
+import { CheckCircle, PartyPopper } from "lucide-react";
 
 const Success = ({ onReset }) => {
   return (
