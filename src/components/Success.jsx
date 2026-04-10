@@ -40,13 +40,13 @@ const Success = ({ onReset }) => {
         </div>
       </div>
       <div className="w-full space-y-3 pt-4">
-        <button
-          onClick={() => (window.location.href = "/dashboard")}
-          className="w-full bg-gray-900 hover:bg-black text-white font-bold py-3 rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 group"
-        >
-          Go to Dashboard
-          <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-        </button>
+        <Link to="/">
+          <button
+            className="w-full bg-gray-900 hover:bg-black text-white font-bold py-3 rounded-xl shadow-lg transition-all flex items-center justify-center gap-2 group"
+          >
+            Go to Dashboard
+          </button>
+        </Link>
 
         <button
           onClick={onReset}
