@@ -57,8 +57,8 @@ const Success = ({ onReset }) => {
       </div>
 
       <div className="flex gap-2">
-        <PartyPopper className="w-4 h-4 text-amber-400 animate-bounce" />
-        <span className="text-[10px] text-gray-300 font-medium uppercase tracking-[0.2em]">
+        <PartyPopper className="w-4 h-4 text-amber-700 animate-bounce" />
+        <span className="text-[10px] text-gray-900 font-medium uppercase tracking-[0.2em]">
           Magical Registration Inc.
         </span>
       </div>
